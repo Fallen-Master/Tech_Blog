@@ -19,7 +19,7 @@ Post.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        date: {
+        dateCreated: {
           type: DataTypes.DATE,
           defaultValue: DataTypes.NOW,
           allowNull: false,
