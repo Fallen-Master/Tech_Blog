@@ -2,11 +2,10 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 
-// todo: import handlebars plugin
-
+const exphbs = require('express-handlebars')
 const routes = require('./controllers');
 
-// todo: import helpers
+const helpers = require('./utils/helpers')
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -14,12 +13,15 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// todo: create handlerbars engine with helper
+const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-// todo: set cookies options
+    maxAge:30000,
+    httpOnly: true,
+    secure:false,
+    sameSite:'strict',
 },
   resave: false,
   saveUninitialized: true,
@@ -30,7 +32,8 @@ const sess = {
 
 app.use(session(sess));
 
-// todo: set view engine
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
