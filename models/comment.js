@@ -1,6 +1,5 @@
 const { Model, DataTypes, INTEGER } = require('sequelize');
 const sequelize = require('../config/connection');
-const { text } = require('express');
 
 class Comment extends Model { }
 
