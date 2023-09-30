@@ -1,38 +1,37 @@
+<div class="mt-5">
 
+  <div class="column container column is-two-fifths  is-align-self-center is-half">
+    <h2 class="title">Login</h2>
 
-<div class=" mt-5">
-  
-    <div class="column container column is-two-fifths  is-align-self-center is-half">
-      <h2 class="title">Login</h2>
-
-      <form class="login-form">
-        <div class="field">
-          <label for="email-login" class="label">Email:</label>
-          <div class="control">
-            <input class="input" type="text" id="email-login" placeholder="Enter your email">
-          </div>
+    <form class="login-form">
+      <div class="field">
+        <label for="username-login" class="label">Username:</label>
+        <div class="control">
+          <input class="input" type="text" id="username-login" placeholder="Enter your email">
         </div>
+      </div>
 
-        <div class="field">
-          <label for="password-login" class="label">Password:</label>
-          <div class="control">
-            <input class="input" type="password" id="password-login" placeholder="Enter your password">
-          </div>
+      <div class="field">
+        <label for="password-login" class="label">Password:</label>
+        <div class="control">
+          <input class="input" type="password" id="password-login" placeholder="Enter your password">
         </div>
+      </div>
 
-        <div >
-          <button  href="/signup"class="  button is-ghost ">Don't have an Account yet!? </button>
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" type="submit">Login</button>
         </div>
+      </div>
+    </form>
 
-        <div class="field">
-          <div class="control">
-            <button class="button is-primary" type="submit">Login</button>
-          </div>
-        </div>
-      </form>
+    <div class="control">
+      <a href="/api/user/signup" class="button is-ghost">Don't have an Account yet!? </a>
     </div>
-  
+
+  </div>
+
 </div>
 
 
-  <script src="./js/login.js"></script>
+<script src="../public/js/login.js"></script>
