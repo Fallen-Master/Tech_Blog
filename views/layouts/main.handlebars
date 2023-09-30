@@ -5,50 +5,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
-  <header class="columns is-mobile is-vcentered is-gapless p-2">
-    <div class="column is-half">
-      <h1 class="title is-size-2">
-        Tech Blog
-      </h1>
+  <header>
+    <nav class="navbar is-primary " role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <h1 class=" is-size-3">Tech Blog</h1>
 
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        
-        <div class="navbar-brand">
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-            data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div  class="navbar-menu">
+        <div class="navbar-start">
+          <a href="/" class="navbar-item">
+            Homepage
+          </a>
+          <a href="/dashboard" class="navbar-item">
+            Dashboard
           </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Home
-            </a>
-            <a class="navbar-item">
-              Dashboard
-            </a>
-            <a class="navbar-item">
-              login
-            </a>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              {{#if logged_in}}
+              <a href="/dashboard">Dashboard</a> | <a id="logout" class="button navbar-item-hover-color">Logout</a>
+              {{else}}
+              <a href="/login" class="button navbar-item-hover-color">Log in</a>
+              {{/if}}
+            </div>
           </div>
         </div>
 
-      </nav>
-    </div>
+      </div>
+    </nav>
+
   </header>
-  <main class="container is-fluid mt-5">
+  <main >
     {{{ body }}}
   </main>
-  <footer>
-
-  </footer>
+<footer class="  is-flex-align-items-flex-end">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
+ {{#if logged_in}}
+  <script src ="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
