@@ -16,9 +16,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err)
   }
 });
-// router.get('/signup', (req, res) => {
-//   res.render('signup');
-// })
+
 
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
