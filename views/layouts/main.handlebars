@@ -5,35 +5,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+  <header class="columns is-mobile is-vcentered is-gapless p-2">
+    <div class="column is-half">
+      <h1 class="title is-size-2">
+        Tech Blog
       </h1>
-      <nav>
-        <!-- todo: Conditionally render login or logout links -->
+
+      <nav class="navbar" role="navigation" aria-label="main navigation">
         
-        <a href="/profile">profile</a> | <button class="no-button" id="logout">logout</button>
-       
-        
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Home
+            </a>
+            <a class="navbar-item">
+              Dashboard
+            </a>
+            <a class="navbar-item">
+              login
+            </a>
+          </div>
+        </div>
+
       </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+    </div>
+  </header>
+  <main class="container is-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
 
-  <!-- todo: Render script for logged in users only -->
-
+  </footer>
 </body>
 
 </html>
