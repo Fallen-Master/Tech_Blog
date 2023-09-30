@@ -1,6 +1,6 @@
 <div class="columns">
   <div class="column">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, !</h2>
   </div>
 </div>
 
@@ -35,25 +35,25 @@
     </form>
   </div>
 
-  {{#if projects.length}} <!-- if project is true then we execute -->
+   <!-- if project is true then we execute -->
   <div class="column is-half project-list">
     <h3>Current Projects:</h3>
 
     <!-- todo: loop and render for each project -->
-    {{#each projects as |project|}}
+    
     <div class="columns mb-2">
       <div class="column is-four-fifths">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/project/">hello</a></h4>
       </div>
       <div class="column is-one-fifth">
-        <button class="button is-small is-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="button is-small is-danger" data-id="hello">DELETE</button>
       </div>
     </div>
     <!-- endtodo -->
-    {{/each}}
+    
   </div>
-  {{/if}}
+
 </div>
 
 <!-- todo: add profile javascript file -->
-<script src="./profile.js"></script>
+<script src="./dashboard.js"></script>
