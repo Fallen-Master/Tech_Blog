@@ -3,9 +3,7 @@ const { Post, User } = require('../models')
 const withAuth = require('../utils/auth')
 
 
-router.get('/signup', (req, res) => {
-  res.render('signup'); // Assuming you're using a template engine like Handlebars
-});
+
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll();
