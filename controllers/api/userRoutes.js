@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.post('/', async (req, res) => {
+router.get('/signup', (req, res) => {
+  res.render('signup'); // Assuming you're using a template engine like Handlebars
+});
+router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -15,6 +18,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 router.post('/login', async (req, res) => {
   try {// need to ensure everthing references the correct 
@@ -47,6 +51,8 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
