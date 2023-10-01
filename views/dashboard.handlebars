@@ -1,59 +1,65 @@
-<div class="columns">
-  <div class="column">
-    <h2>Welcome, !</h2>
-  </div>
-</div>
 
-<div class="columns mt-4">
-  <div class="column is-half">
-    <h3>Create a New Project:</h3>
-
-    <form class="form new-project-form">
-      <div class="field">
-        <label class="label" for="project-name">Project Name:</label>
-        <div class="control">
-          <input class="input" type="text" id="project-name" name="project-name" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label" for="project-funding">Needed Funding ($):</label>
-        <div class="control">
-          <input class="input" type="number" id="project-funding" name="project-funding" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label" for="project-desc">Description:</label>
-        <div class="control">
-          <textarea class="textarea" id="project-desc" name="project-desc"></textarea>
-        </div>
-      </div>
-      <div class="field">
-        <div class="control">
-          <button type="submit" class="button is-primary">Create</button>
-        </div>
-      </div>
-    </form>
-  </div>
-
-   <!-- if project is true then we execute -->
-  <div class="column is-half project-list">
-    <h3>Current Projects:</h3>
-
-    <!-- todo: loop and render for each project -->
-    
-    <div class="columns mb-2">
-      <div class="column is-four-fifths">
-        <h4><a href="/project/">hello</a></h4>
-      </div>
-      <div class="column is-one-fifth">
-        <button class="button is-small is-danger" data-id="hello">DELETE</button>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+        <h2 class="title">Welcome, {{username}}!</h2>
       </div>
     </div>
-    <!-- endtodo -->
-    
   </div>
+</section>
 
+<div class="section">
+  <div class="columns">
+    <!-- New Blog Post form -->
+    <div class="column is-half">
+      <h3 class="title is-3">Create a New Blog Post:</h3>
+
+      <form class="new-blog-post-form">
+        <div class="field">
+          <label class="label" for="blog-title">Title:</label>
+          <div class="control">
+            <input class="input" type="text" id="post-title" name="post-title" placeholder="Enter your blog title"
+              required />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="post-content">Content:</label>
+          <div class="control">
+            <textarea class="textarea" id="post-content" name="post-content"
+              placeholder="Write your blog content here..." required></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary" type="submit">Publish</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Current Blog Posts list -->
+    {{#if post.length}}
+    <div class="column is-half your-post">
+      <h3 class="title is-3">Your Published Posts:</h3>
+
+      {{#each post as |post|}}
+      <div class="card mb-4">
+        <div class="card-content">
+          <div class="columns">
+            <div class="column is-two-thirds">
+              <h4 class="title is-4"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+            </div>
+            <div class="column is-one-third has-text-right">
+              <button class="button is-small is-danger" data-id="{{post.id}}" type="button">DELETE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
 </div>
 
-<!-- todo: add profile javascript file -->
-<script src="./dashboard.js"></script>
+<script src="./js/dashboard.js"></script>

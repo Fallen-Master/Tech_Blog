@@ -26,8 +26,7 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize,
-    tableName: 'my_sessions'
+    db: sequelize
   })
 };
 
