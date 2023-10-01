@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.get('/signup', (req, res) => {
-  res.render('signup'); // Assuming you're using a template engine like Handlebars
-});
-router.post('/signupOne', async (req, res) => {
+
+
+
+
+router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
