@@ -3,14 +3,15 @@
 <div class="columns mb-4">
   <div class="column is-5">
     <h2 class="title">    
-      <a href="/post/{{post.id}}">{{post.title}}</a>
+      <a href="/post/{{post.id}}">Title: {{post.title}}</a>
     </h2>
-    <p>Written by {{username}} on {{post.date_created}}</p>
+    <p>Written by {{user.username}} on {{post.date_created}}</p>
   </div>
   <div class="column is-7">
-    <p>
-      {{post.content}}
-    </p>
+    <div>
+    <h3 style="font-size: 1.5rem;">Post</h3>
+    <p>{{post.content}}</p>
+    </div>
   </div>
 </div>
 {{/each}}

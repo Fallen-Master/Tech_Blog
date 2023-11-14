@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">{{post.title}}</h1>
+    <p class="subtitle">Posted by {{user.username}} on {{post.date_created}}</p>
+    <div class="content">
+      {{post.content}}
+    </div>
+    {{#if logged_in}}
+    <button class="button is-danger" id="delete-post">Delete Post</button>
+    {{/if}}
+  </div>
+</section>
+
+<script src="./js/post.js"></script>

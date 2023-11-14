@@ -13,29 +13,19 @@
     <nav class="navbar is-primary " role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <h1 class=" is-size-3">Tech Blog</h1>
-
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
       </div>
 
-      <div  class="navbar-menu">
+      <div class="navbar-menu">
         <div class="navbar-start">
-          <a href="/" class="navbar-item">
-            Homepage
-          </a>
-          <a href="/dashboard" class="navbar-item">
-            Dashboard
-          </a>
+          <a href="/" class="navbar-item"> Homepage</a>
         </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
               {{#if logged_in}}
-              <a href="/dashboard">Dashboard</a> | <a id="logout" class="button navbar-item-hover-color">Logout</a>
+              <a href="/dashboard" class="navbar-item"> Dashboard</a>
+              <button id="logout" class="button navbar-item-hover-color">Logout</button>
               {{else}}
               <a href="/login" class="button navbar-item-hover-color">Log in</a>
               {{/if}}
@@ -47,20 +37,20 @@
     </nav>
 
   </header>
-  <main >
+  <main>
     {{{ body }}}
   </main>
-<footer class="  is-flex-align-items-flex-end">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
-</footer>
- {{#if logged_in}}
-  <script src ="/js/logout.js"></script>
+  <footer class="  is-flex-align-items-flex-end">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 

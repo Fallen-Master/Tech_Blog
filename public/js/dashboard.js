@@ -40,6 +40,5 @@ document
   .querySelector('.new-blog-post-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.your-post ')
-  .addEventListener('click', deleteButtonHandler);
+const deleteButtons = document.querySelectorAll('.your-posts .delete-post');
+deleteButtons.forEach(button => button.addEventListener('click', deleteButtonHandler));
